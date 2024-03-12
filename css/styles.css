@@ -1,0 +1,343 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+#container {
+    width: 800px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: rgba(167, 255, 255, 0.644);
+    position: relative;
+    overflow: hidden;
+}
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#restart {
+    display: none;
+}
+
+#info {
+    margin-top: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    height: 100px;
+    background-color: #dbdbdb;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.info p {
+    margin: 5px 20px;
+}
+
+#gameover {
+    position: absolute;
+    right: 175px;
+    bottom: 120px;
+    font-size: 80px;
+    color: red;
+    z-index: 3;
+}
+
+#fundo {
+    height: 100%;
+    width: 50%;
+}
+
+#chao {
+    height: 50px;
+    width: 100%;
+    background-color: green;
+    border-top: 5px solid rgb(90, 43, 10);
+    position: absolute;
+    bottom: 0;
+}
+
+#bloco img {
+    position: absolute;
+    bottom: 50px;
+    left: 40px;
+    height: 28%;
+    z-index: 2;
+}
+
+.jump {
+    animation: jump 0.4s ease-out;
+}
+
+.jumpHigher {
+    animation: jumpHigher 0.4s ease-out;
+}
+
+.cair {
+    animation: cair .750s ease-out;
+}
+
+#pontuacao {
+    font-size: 50px;
+    display: flex;
+    justify-content: right;
+    margin-right: 15px;
+}
+
+#ranking {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    background-color: dbdbdb;
+    border: 1px solid black;
+}
+
+
+#obstaculo1 {
+    width: 30px;
+    height: 70px;
+    background-color: black;
+    position: absolute;
+    bottom: 50px;
+    right: -30px;
+}
+
+#obstaculo2 {
+    width: 30px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    bottom: 220px;
+    right: -30px;
+}
+
+.obstaculoMove {
+    animation: obstaculoMove .800s infinite linear;
+}
+
+#obstaculo3 {
+    width: 80px;
+    height: 300px;
+    background-color: black;
+    position: absolute;   
+    bottom: 120px;
+    right: -150px;
+}
+
+.obstaculo3Move {
+    animation: obstaculo3Move .800s infinite linear;
+}
+
+#obstaculo4 {
+    width: 30px;
+    height: 145px;
+    background-color: black;
+    position: absolute;
+    bottom: 50px;
+    right: -30px;
+}
+
+.obstaculo4Move {
+    animation: obstaculo4Move .800s infinite linear;
+}
+
+#buraco {
+    width: 300px;
+    height: 200px;
+    border-left: 5px solid rgb(90, 43, 10);
+    border-right: 5px solid rgb(90, 43, 10);
+    background-color: rgb(134, 66, 35);
+    position: absolute;
+    bottom: -150px;
+    right: -300px;
+    z-index: 1;
+}
+
+.buracoMove {
+    animation: buracoMove .800s infinite linear;
+}
+
+#paredeBuraco {
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    bottom: 220px;
+    right: -300px;
+}
+
+.paredeBuracoMove {
+    animation: paredeBuracoMove .800s infinite linear;
+}
+
+@keyframes buracoMove {
+    from {
+        right: -300px;
+    } to {
+        right: 100%;
+    }
+}
+
+@keyframes paredeBuracoMove {
+    from {
+        right: -300px;
+    } to {
+        right: 100%;
+    }
+}
+
+
+@keyframes jump {
+    0% {
+        bottom: 50px;
+    } 
+    40% {
+        bottom: 120px;
+    } 
+    50% {
+        bottom: 120px;
+    } 
+    60% {
+        bottom: 120px;
+    }
+    100% {
+        bottom: 50px;
+    }   
+}
+
+@keyframes jumpHigher {
+    0% {
+        bottom: 50px;
+    } 
+    40% {
+        bottom: 200px;
+    } 
+    50% {
+        bottom: 200px;
+    } 
+    60% {
+        bottom: 200px;
+    }
+    100% {
+        bottom: 50px;
+    }   
+}
+
+
+@keyframes cair {
+    from {
+        bottom: 40px;
+        left: 40px;
+    } to {
+        bottom: -300px;
+        left: 120px;
+    }
+}
+
+
+@keyframes obstaculoMove {
+    from {
+        right: -30px;
+    } to {
+        right: 100%;
+    }
+}
+
+
+@keyframes obstaculo3Move {
+    from {
+        right: -80px;
+    } to {
+        right: 100%;
+    }
+}
+
+@keyframes obstaculo4Move {
+    from {
+        right: -30px;
+    } to {
+        right: 100%;
+    }
+}
+
+@keyframes tomboObstaculo1 {
+    0% {
+        bottom: 115px;
+        left: 40px;
+    }40%{
+        bottom: 20px;
+        rotate: 90deg;
+        left: 100px;
+    }50% {
+        left: 110px;
+    }60% {
+        left: 120px;
+    }70% {
+        left: 130px;
+    }80% {
+        left: 140px;
+    }90% {
+        left: 150px;
+    }100%{
+        left: 160px;
+    }
+}
+
+.tomboObstaculo1 {
+    animation: tomboObstaculo1 0.25s linear;
+}
+
+.blocorotated {
+    rotate: 90deg;
+}
+
+@keyframes tomboObstaculo4 {
+    0% {
+        bottom: 170px;
+        left: 40px;
+    }40%{
+        bottom: 140px;
+   
+        left: 70px;
+    }50% {
+        bottom: 90px;
+        left: 100px;
+        
+    }60% {
+        left: 120px;
+    }70% {
+        bottom: 50px;
+        left: 140px;
+
+    }80% {
+        left: 160px;
+    }90% {
+        rotate: 90deg;
+        bottom: 20px;
+        left: 180px;
+    }100%{
+        left: 200px;
+    }
+}
+
+.tomboObstaculo4 {
+    animation: tomboObstaculo4 0.25s linear;
+}
